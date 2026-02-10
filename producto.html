@@ -1,0 +1,145 @@
+<!-- producto.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Producto – Moda MX</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:system-ui, -apple-system, sans-serif; background:#fff; color:#111; line-height:1.6; }
+    header { position:fixed; top:0; width:100%; background:#fff; border-bottom:1px solid #eee; z-index:100; }
+    nav { max-width:1400px; margin:0 auto; padding:1.2rem 5%; display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.35rem; font-weight:500; letter-spacing:0.05em; }
+    .nav-links a { color:#333; text-decoration:none; margin-left:2.2rem; font-size:0.95rem; }
+    .nav-links a:hover { color:#000; }
+    .cart { font-size:1.2rem; color:#222; }
+    main { padding-top:100px; max-width:1200px; margin:0 auto; padding:100px 5% 80px; }
+    .product-detail { display:grid; grid-template-columns:1fr 1fr; gap:5rem; }
+    .images img { width:100%; height:auto; display:block; margin-bottom:1.5rem; }
+    .info h1 { font-size:1.8rem; font-weight:400; margin-bottom:1rem; }
+    .price { font-size:1.5rem; font-weight:500; margin-bottom:1.5rem; }
+    .description { color:#555; margin-bottom:2rem; font-size:1.05rem; }
+    .options { margin-bottom:2rem; }
+    .options label { display:block; margin:1rem 0 0.5rem; font-weight:500; }
+    select, .sizes { padding:0.8rem; border:1px solid #ddd; background:#fff; font-size:1rem; width:100%; max-width:300px; }
+    .sizes button { margin:0.3rem; padding:0.6rem 1rem; border:1px solid #ccc; background:transparent; cursor:pointer; min-width:50px; }
+    .sizes button.active { border-color:#000; background:#f8f8f8; }
+    .btn { display:inline-block; padding:1rem 2.5rem; background:#000; color:#fff; text-decoration:none; font-weight:500; transition:background 0.25s; border:none; cursor:pointer; }
+    .btn:hover { background:#222; }
+    .back { margin:3rem 0; display:inline-block; color:#555; text-decoration:none; font-size:0.95rem; }
+    .back:hover { color:#000; }
+    @media (max-width:900px) { .product-detail { grid-template-columns:1fr; gap:3rem; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo"><a href="index.html" style="color:#000; text-decoration:none;">Moda MX</a></div>
+      <div class="nav-links">
+        <a href="#">Mujer</a>
+        <a href="#">Hombre</a>
+        <a href="#">Novedades</a>
+      </div>
+      <div class="cart"><i class="far fa-bag-shopping"></i></div>
+    </nav>
+  </header>
+
+  <main>
+    <a href="index.html" class="back">← Volver a la colección</a>
+
+    <div class="product-detail" id="productDetail">
+      <div class="images">
+        <img id="mainImage" src="" alt="Producto">
+      </div>
+      <div class="info">
+        <h1 id="name"></h1>
+        <div class="price" id="price"></div>
+        <p class="description" id="description"></p>
+
+        <div class="options">
+          <label>Talla</label>
+          <div class="sizes" id="sizes">
+            <!-- Se llenan con JS -->
+          </div>
+
+          <label>Color</label>
+          <select id="color">
+            <option>Blanco</option>
+            <option>Negro</option>
+            <option>Gris</option>
+          </select>
+        </div>
+
+        <button class="btn">Añadir al carrito</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    
+// Cargar productos desde JSON externo
+fetch('productos.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('No se pudo cargar productos.json');
+    }
+    return response.json();
+  })
+  .then(products => {
+    // Ahora ya tenemos la lista de productos
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = parseInt(urlParams.get('id'));
+    const product = products.find(p => p.id === id);
+
+    if (product) {
+      // Llenar la información del producto
+      document.getElementById('name').textContent = product.name;
+      document.getElementById('price').textContent = `${product.price} ${product.currency || 'MXN'}`;
+      document.getElementById('description').textContent = product.description;
+      document.getElementById('mainImage').src = product.image;
+      document.title = `${product.name} – Moda MX`;
+
+      // Llenar tallas dinámicamente desde el JSON
+      const sizesDiv = document.getElementById('sizes');
+      sizesDiv.innerHTML = ''; // Limpiar primero
+
+      (product.sizes || ['S', 'M', 'L', 'XL']).forEach(size => {
+        const btn = document.createElement('button');
+        btn.textContent = size;
+        btn.onclick = () => {
+          document.querySelectorAll('.sizes button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        };
+        sizesDiv.appendChild(btn);
+      });
+
+      // Opcional: podrías llenar colores también dinámicamente
+      // const colorSelect = document.getElementById('color');
+      // colorSelect.innerHTML = '';
+      // (product.colors || []).forEach(color => {
+      //   const option = document.createElement('option');
+      //   option.value = color;
+      //   option.textContent = color;
+      //   colorSelect.appendChild(option);
+      // });
+
+    } else {
+      document.getElementById('productDetail').innerHTML = 
+        '<h2>Producto no encontrado</h2>' +
+        '<a href="index.html" class="back">Volver a la colección</a>';
+    }
+  })
+  .catch(error => {
+    console.error('Error al cargar los productos:', error);
+    document.getElementById('productDetail').innerHTML = 
+      '<h2>Error al cargar el producto</h2>' +
+      '<p>Intenta recargar la página o verifica que productos.json exista.</p>' +
+      '<a href="index.html" class="back">Volver</a>';
+  });
+  </script>
+
+</body>
+</html>

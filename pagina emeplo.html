@@ -1,0 +1,108 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moda MX – Essentials</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background:#ffffff; color:#111111; line-height:1.5; }
+    header { position:fixed; top:0; width:100%; background:#ffffff; border-bottom:1px solid #eeeeee; z-index:100; }
+    nav { max-width:1400px; margin:0 auto; padding:1.2rem 5%; display:flex; justify-content:space-between; align-items:center; }
+    .logo { font-size:1.35rem; font-weight:500; letter-spacing:0.05em; color:#000; }
+    .nav-links a { color:#333; text-decoration:none; margin-left:2.2rem; font-size:0.95rem; font-weight:400; }
+    .nav-links a:hover { color:#000; }
+    .cart { font-size:1.2rem; color:#222; }
+    main { padding-top:80px; }
+    .hero { min-height:70vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:4rem 5%; background:#f8f8f8; }
+    .hero-content { max-width:680px; }
+    .hero h1 { font-size:2.8rem; font-weight:400; margin-bottom:1.2rem; letter-spacing:-0.02em; }
+    .hero p { font-size:1.15rem; color:#555; margin-bottom:2.2rem; }
+    .btn { display:inline-block; padding:0.85rem 2rem; background:#000; color:#fff; text-decoration:none; font-size:0.95rem; font-weight:500; letter-spacing:0.03em; transition:background 0.25s; }
+    .btn:hover { background:#222; }
+    .container { max-width:1400px; margin:6rem auto 8rem; padding:0 5%; }
+    h2 { font-size:1.8rem; font-weight:400; text-align:center; margin-bottom:4rem; color:#222; }
+    .products { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:4rem 2.5rem; }
+    .product { text-align:center; }
+    .product a { text-decoration:none; color:inherit; display:block; }
+    .product img { width:100%; height:auto; display:block; margin-bottom:1.4rem; }
+    .product h3 { font-size:1.1rem; font-weight:400; margin-bottom:0.6rem; color:#111; }
+    .price { font-size:1.05rem; color:#444; margin-bottom:1.2rem; }
+    .btn-add { padding:0.7rem 1.6rem; background:transparent; border:1px solid #ddd; color:#333; font-size:0.9rem; cursor:pointer; transition:all 0.25s; }
+    .btn-add:hover { background:#f0f0f0; border-color:#aaa; }
+    footer { text-align:center; padding:4rem 1rem 6rem; color:#777; font-size:0.9rem; border-top:1px solid #eee; }
+    @media (max-width:768px) { .hero h1 {font-size:2.2rem;} .nav-links a {margin-left:1.2rem; font-size:0.9rem;} .products {gap:3.5rem 1.8rem;} }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Moda MX</div>
+      <div class="nav-links">
+        <a href="#">Mujer</a>
+        <a href="#">Hombre</a>
+        <a href="#">Novedades</a>
+      </div>
+      <div class="cart">
+        <i class="far fa-bag-shopping"></i>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Prendas esenciales</h1>
+        <p>Calidad simple. Diseños atemporales.<br>Envío gratis a partir de $800 MXN.</p>
+        <a href="#productos" class="btn">Ver colección</a>
+      </div>
+    </section>
+
+    <div class="container" id="productos">
+      <h2>Colección actual</h2>
+
+      <div class="products">
+        <div class="product">
+          <a href="producto.html?id=1">
+            <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sudadera">
+            <h3>Sudadera Algodón</h3>
+            <div class="price">$580</div>
+          </a>
+        </div>
+
+        <div class="product">
+          <a href="producto.html?id=2">
+            <img src="https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camiseta">
+            <h3>Camiseta Oversize</h3>
+            <div class="price">$380</div>
+          </a>
+        </div>
+
+        <div class="product">
+          <a href="producto.html?id=3">
+            <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pantalón">
+            <h3>Pantalón Cargo</h3>
+            <div class="price">$890</div>
+          </a>
+        </div>
+
+        <div class="product">
+          <a href="producto.html?id=4">
+            <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Camisa">
+            <h3>Camisa Lino</h3>
+            <div class="price">$720</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Moda MX • Monterrey, México • 2026</p>
+  </footer>
+
+</body>
+</html>
