@@ -91,5 +91,24 @@
     "stock": 1,
     "sku": "Mago-005",
     "featured": false
+  }, {
+    "id": 6,
+    "name": "Gorra Toto Caps Belico LR",
+    "price": 1500,
+    "currency": "MXN",
+    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Belico.jpeg?raw=true",
+    "images": [
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago2.jpeg?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago1.jpeg?raw=true",
+   "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago3.jpeg?raw=true"
+    ],
+    "category": "Gorras",
+    "sizes": ["U"],
+    "colors": ["Natural"],
+    "material": "Tela Y Gamuza",
+    "stock": 1,
+    "sku": "Lr-006",
+    "featured": false
   }
 ]
