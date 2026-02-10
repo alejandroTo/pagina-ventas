@@ -78,11 +78,11 @@
     "price": 1500,
     "currency": "MXN",
     "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
-    "image": "Imagenes/Mago1.JPEG",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago1.jpeg?raw=true",
     "images": [
-    "Imagenes/Mago2.JPEG",
-    "Imagenes/Mago1.JPEG",
-   "Imagenes/Mago3.JPEG"
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago2.jpeg?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago1.jpeg?raw=true",
+   "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago3.jpeg?raw=true"
     ],
     "category": "Gorras",
     "sizes": ["U"],
