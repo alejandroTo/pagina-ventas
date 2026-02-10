@@ -1,79 +1,6 @@
 [
   {
     "id": 1,
-    "name": "Sudadera Algodón",
-    "price": 580,
-    "currency": "MXN",
-    "description": "Sudadera de algodón orgánico 100%, corte recto, ideal para uso diario. Suave y duradera.",
-    "image": "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "images": [
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1552374196-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    ],
-    "category": "Sudaderas",
-    "sizes": ["XS", "S", "M", "L", "XL"],
-    "colors": ["Negro", "Gris", "Blanco"],
-    "material": "Algodón orgánico 100%",
-    "stock": 45,
-    "sku": "SUDA-001",
-    "featured": true
-  },
-  {
-    "id": 2,
-    "name": "Camiseta Oversize",
-    "price": 380,
-    "currency": "MXN",
-    "description": "Camiseta oversize en algodón premium, caída relajada y cuello redondo reforzado.",
-    "image": "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "images": [
-      "https://images.unsplash.com/photo-1602293589930-45aad59ba3ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    ],
-    "category": "Camisetas",
-    "sizes": ["S", "M", "L", "XL"],
-    "colors": ["Blanco", "Negro", "Beige", "Gris oscuro"],
-    "material": "Algodón 220 gsm",
-    "stock": 78,
-    "sku": "CAMI-002",
-    "featured": false
-  },
-  {
-    "id": 3,
-    "name": "Pantalón Cargo",
-    "price": 890,
-    "currency": "MXN",
-    "description": "Pantalón cargo con bolsillos funcionales, tela resistente y ajuste cómodo.",
-    "image": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "images": [
-      "https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    ],
-    "category": "Pantalones",
-    "sizes": ["28", "30", "32", "34", "36"],
-    "colors": ["Caqui", "Negro", "Gris"],
-    "material": "Mezcla algodón / poliéster",
-    "stock": 22,
-    "sku": "PANT-003",
-    "featured": true
-  },
-  {
-    "id": 4,
-    "name": "Camisa Lino",
-    "price": 720,
-    "currency": "MXN",
-    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
-    "image": "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    "images": [
-      "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    ],
-    "category": "Camisas",
-    "sizes": ["S", "M", "L", "XL"],
-    "colors": ["Natural", "Azul claro", "Blanco"],
-    "material": "Lino 100%",
-    "stock": 31,
-    "sku": "CAMI-004",
-    "featured": false
-  },
-  {
-    "id": 5,
     "name": "Gorra El Mago",
     "price": 1500,
     "currency": "MXN",
@@ -92,16 +19,15 @@
     "sku": "Mago-005",
     "featured": false
   }, {
-    "id": 6,
+    "id": 2,
     "name": "Gorra Toto Caps Belico LR",
     "price": 1500,
     "currency": "MXN",
     "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
     "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Belico.jpeg?raw=true",
     "images": [
-    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago2.jpeg?raw=true",
-    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago1.jpeg?raw=true",
-   "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Mago3.jpeg?raw=true"
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Belico3.jpeg?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Belico2.png?raw=true"
     ],
     "category": "Gorras",
     "sizes": ["U"],
