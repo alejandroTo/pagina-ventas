@@ -71,5 +71,25 @@
     "stock": 31,
     "sku": "CAMI-004",
     "featured": false
+  },
+  {
+    "id": 5,
+    "name": "Gorra El Mago",
+    "price": 1500,
+    "currency": "MXN",
+    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
+    "image": "../Imagenes/Mago1.JPEG",
+    "images": [
+    "../Imagenes/Mago2.JPEG",
+    "../Imagenes/Mago1.JPEG",
+   "../Imagenes/Mago3.JPEG"
+    ],
+    "category": "Gorras",
+    "sizes": ["U"],
+    "colors": ["Natural"],
+    "material": "Lino 100%",
+    "stock": 1,
+    "sku": "Mago-005",
+    "featured": false
   }
 ]

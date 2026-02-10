@@ -35,7 +35,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
     }
 
     .logo {
@@ -45,9 +44,18 @@
       color: #000;
     }
 
+    .hamburger {
+      display: none;
+      font-size: 1.6rem;
+      background: none;
+      border: none;
+      color: #222;
+      cursor: pointer;
+    }
+
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.8rem;
     }
 
     .nav-links a {
@@ -67,7 +75,7 @@
     }
 
     main {
-      padding-top: 70px; /* espacio para header fijo */
+      padding-top: 70px;
     }
 
     .hero {
@@ -88,7 +96,6 @@
       font-size: clamp(1.8rem, 6vw, 2.6rem);
       font-weight: 400;
       margin-bottom: 1rem;
-      letter-spacing: -0.02em;
     }
 
     .hero p {
@@ -199,7 +206,6 @@
       font-size: 1.05rem;
       font-weight: 400;
       margin-bottom: 0.5rem;
-      color: #111;
     }
 
     .price {
@@ -224,22 +230,41 @@
     }
 
     /* ────────────────────────────────────────────────
-       RESPONSIVE ADJUSTMENTS
+       MOBILE MENU
     ──────────────────────────────────────────────── */
 
     @media (max-width: 768px) {
-      nav {
-        padding: 0.9rem 5%;
-        flex-direction: row;
-        justify-content: space-between;
+      .hamburger {
+        display: block;
       }
 
       .nav-links {
-        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.35s ease-in-out;
+        box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+        z-index: 99;
+      }
+
+      .nav-links.active {
+        right: 0;
       }
 
       .nav-links a {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
+        margin: 1.5rem 0;
+      }
+
+      .cart {
+        order: 3;
       }
 
       main {
@@ -251,47 +276,18 @@
         padding: 4rem 5% 3rem;
       }
 
-      .filters {
-        padding: 0 5% 1.5rem;
-      }
-
       .products {
         grid-template-columns: 1fr;
         gap: 3rem 1rem;
       }
-
-      .product img {
-        margin-bottom: 0.8rem;
-      }
-
-      .product h3 {
-        font-size: 1.1rem;
-      }
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .btn {
-        padding: 0.8rem 1.8rem;
-        font-size: 0.92rem;
-      }
-
-      .category-btn {
-        padding: 0.6rem 1.1rem;
-        font-size: 0.88rem;
-      }
-
-      #searchInput {
-        padding: 0.8rem 1rem;
-        font-size: 0.95rem;
-      }
+      .hero h1 { font-size: 1.9rem; }
+      .hero p { font-size: 1rem; }
+      .btn { padding: 0.8rem 1.8rem; font-size: 0.92rem; }
+      .category-btn { padding: 0.6rem 1.1rem; font-size: 0.88rem; }
+      #searchInput { padding: 0.8rem 1rem; font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -300,11 +296,17 @@
   <header>
     <nav>
       <div class="logo">Moda MX</div>
-      <div class="nav-links">
+
+      <div class="nav-links" id="navLinks">
         <a href="#">Mujer</a>
         <a href="#">Hombre</a>
         <a href="#">Novedades</a>
       </div>
+
+      <button class="hamburger" id="hamburgerBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
       <div class="cart">
         <i class="far fa-bag-shopping"></i>
       </div>
@@ -339,7 +341,35 @@
   </footer>
 
   <script>
-    // El script JavaScript se mantiene igual al de la versión anterior
+    // ── Menú hamburguesa ────────────────────────────────
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      // Cambiar ícono (opcional)
+      hamburger.innerHTML = navLinks.classList.contains('active')
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        navLinks.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    });
+
+    // ── Resto del script (productos, búsqueda, categorías) ──
     let allProducts = [];
     let currentCategory = 'Todos';
 
