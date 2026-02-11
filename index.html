@@ -221,74 +221,61 @@
       padding: 4rem 1rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 3rem 1rem 5rem;
-      color: #777;
-      font-size: 0.9rem;
-      border-top: 1px solid #eee;
-    }
+   
+/* Tarjeta fija minimalista con título y precio centrado - solo móvil */
+.oferta-fixed {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: 90;
+  padding: 8px 4% 10px;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
-    /* ────────────────────────────────────────────────
-       MOBILE MENU
-    ──────────────────────────────────────────────── */
+.oferta-fixed .titulo {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #d32f2f; /* rojo sutil */
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
 
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
+.oferta-fixed .contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
 
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        max-width: 280px;
-        height: 100vh;
-        background: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.35s ease-in-out;
-        box-shadow: -4px 0 15px rgba(0,0,0,0.1);
-        z-index: 99;
-      }
+.oferta-fixed .foto {
+  flex: 0 0 42px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: 4px;
+}
 
-      .nav-links.active {
-        right: 0;
-      }
+.oferta-fixed .foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-      .nav-links a {
-        font-size: 1.3rem;
-        margin: 1.5rem 0;
-      }
+.oferta-fixed .precio {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #111111;
+}
 
-      .cart {
-        order: 3;
-      }
-
-      main {
-        padding-top: 60px;
-      }
-
-      .hero {
-        min-height: 45vh;
-        padding: 4rem 5% 3rem;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-        gap: 3rem 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.9rem; }
-      .hero p { font-size: 1rem; }
-      .btn { padding: 0.8rem 1.8rem; font-size: 0.92rem; }
-      .category-btn { padding: 0.6rem 1.1rem; font-size: 0.88rem; }
-      #searchInput { padding: 0.8rem 1rem; font-size: 0.95rem; }
-    }
+/* Solo visible en móvil */
+@media (max-width: 768px) {
+  .oferta-fixed {
+    display: block;
+  }
+}
   </style>
 </head>
 <body>
@@ -317,7 +304,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Prendas esenciales</h1>
-        <p>Calidad simple. Diseños atemporales.<br></p>
+        <p>Calidad simple. Diseños atemporales.<br>Envío gratis a partir de $800 MXN.</p>
         <a href="#productos" class="btn">Ver colección</a>
       </div>
     </section>
@@ -336,10 +323,24 @@
     </div>
   </main>
 
-  <footer>
-    <p>Moda MX • Monterrey, México • 2026</p>
-  </footer>
-
+ <!-- Tarjeta fija ultra-minimalista con "Oferta del día" arriba -->
+<div class="oferta-fixed" id="ofertaFixed">
+  <a href="#" id="ofertaLink">
+    <div class="contenido">
+      <div class="foto">
+        <img id="ofertaImg" src="" alt="">
+      </div>
+      
+      <div class="info">
+        <div class="titulo">Oferta del día</div>
+        <div class="precio" id="ofertaPrecio"></div>
+      </div>
+      
+      <!-- Espacio vacío a la derecha para balance visual -->
+      <div style="width: 40px;"></div>
+    </div>
+  </a>
+</div>
   <script>
     // ── Menú hamburguesa ────────────────────────────────
     const hamburger = document.getElementById('hamburgerBtn');
@@ -347,13 +348,11 @@
 
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      // Cambiar ícono (opcional)
       hamburger.innerHTML = navLinks.classList.contains('active')
         ? '<i class="fas fa-times"></i>'
         : '<i class="fas fa-bars"></i>';
     });
 
-    // Cerrar menú al hacer clic en un enlace
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -361,7 +360,6 @@
       });
     });
 
-    // Cerrar menú al hacer clic fuera
     document.addEventListener('click', (e) => {
       if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
         navLinks.classList.remove('active');
@@ -369,7 +367,7 @@
       }
     });
 
-    // ── Resto del script (productos, búsqueda, categorías) ──
+    // ── Resto del script (productos, búsqueda, categorías, oferta) ──
     let allProducts = [];
     let currentCategory = 'Todos';
 
@@ -382,6 +380,7 @@
         allProducts = products;
         renderProducts(products);
         generateCategories(products);
+        renderOfertaDelDia(products);
       })
       .catch(error => {
         console.error('Error:', error);
@@ -454,6 +453,23 @@
     }
 
     document.getElementById('searchInput').addEventListener('input', filterAndRender);
+
+   // Nueva función: Renderizar oferta del día como tarjeta
+// Función: Renderizar oferta fija en bottom (solo foto + precio)
+function renderOfertaDelDia(products) {
+  // Elige producto featured o el primero disponible
+  const ofertaProduct = products.find(p => p.featured) || products[0];
+  if (!ofertaProduct) return;
+
+  const link = document.getElementById('ofertaLink');
+  const img = document.getElementById('ofertaImg');
+  const precio = document.getElementById('ofertaPrecio');
+
+  link.href = `producto.html?id=${ofertaProduct.id}`;
+  img.src = ofertaProduct.image;
+  img.alt = ofertaProduct.name;
+  precio.textContent = `${ofertaProduct.price} ${ofertaProduct.currency || 'MXN'}`;
+}
   </script>
 
 </body>
