@@ -36,5 +36,23 @@
     "stock": 1,
     "sku": "Lr-006",
     "featured": false
+  }, {
+    "id": 3,
+    "name": "Chamarra Champion",
+    "price": 1050,
+    "currency": "MXN",
+    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion1.png?raw=true",
+    "images": [
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion1.png?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion1.png?raw=true"
+    ],
+    "category": "Chamarras",
+    "sizes": ["M"],
+    "colors": ["Natural"],
+    "material": "Tela Y Gamuza",
+    "stock": 1,
+    "sku": "CH-003",
+    "featured": false
   }
 ]
