@@ -76,7 +76,7 @@
   } ,{
     "id": 5,
     "name": "Gorra TOTO Hats TONY AG MALA RACHA ALL BLK",
-    "price": 1250,
+    "price": 1300,
     "currency": "MXN",
     "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
     "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/tony1.jpeg?raw=true",
@@ -95,7 +95,7 @@
   },{
     "id": 6,
     "name": "Gorra Anymore BAT GERVONTA BLACK",
-    "price": 1150,
+    "price": 1200,
     "currency": "MXN",
     "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
     "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/bat1.jpeg?raw=true",
