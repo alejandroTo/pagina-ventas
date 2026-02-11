@@ -147,5 +147,24 @@
     "stock": 1,
     "sku": "rude-003",
     "featured": false
+  },{
+    "id": 9,
+    "name": "Under Armour Rival Fleece",
+    "price": 900,
+    "currency": "MXN",
+    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Rival1.jpeg?raw=true",
+    "images": [
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Rival2.jpeg?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Rival3.jpeg?raw=true",
+        "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Rival1.jpeg?raw=true"
+    ],
+    "category": "Chamarras",
+    "sizes": ["G"],
+    "colors": ["Natural"],
+    "material": "Tela Y Gamuza",
+    "stock": 1,
+    "sku": "rude-003",
+    "featured": false
   }
 ]
