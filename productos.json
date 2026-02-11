@@ -54,5 +54,24 @@
     "stock": 1,
     "sku": "CH-003",
     "featured": false
+  }, {
+    "id": 4,
+    "name": "Gorra Franco Cabassi DS Black/Red",
+    "price": 450,
+    "currency": "MXN",
+    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Cabassi3.JPEG?raw=true",
+    "images": [
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Cabassi1.JPEG?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Cabassi2.JPEG?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Cabassi4.JPEG?raw=true"
+    ],
+    "category": "Gorras",
+    "sizes": ["U"],
+    "colors": ["Natural"],
+    "material": "Tela Y Gamuza",
+    "stock": 1,
+    "sku": "CH-003",
+    "featured": false
   }
 ]
