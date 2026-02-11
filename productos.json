@@ -110,5 +110,42 @@
     "stock": 1,
     "sku": "tony-003",
     "featured": false
+  },{
+    "id": 7,
+    "name": "Gorra Rude Awekening II CRYSTALS BLK",
+    "price": 1300,
+    "currency": "MXN",
+    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Rude1.jpeg?raw=true",
+    "images": [
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Rude2.jpeg?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Rude3.jpeg?raw=true"
+    ],
+    "category": "Gorras",
+    "sizes": ["U"],
+    "colors": ["Natural"],
+    "material": "Tela Y Gamuza",
+    "stock": 1,
+    "sku": "rude-003",
+    "featured": false
+  },{
+    "id": 8,
+    "name": "Gorra Rude Awekening II CRYSTALS BLK/WHT",
+    "price": 1500,
+    "currency": "MXN",
+    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Awekening1.jpeg?raw=true",
+    "images": [
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Awekening2.jpeg?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Awekening3.jpeg?raw=true",
+        "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/Awekening4.jpeg?raw=true"
+    ],
+    "category": "Gorras",
+    "sizes": ["U"],
+    "colors": ["Natural"],
+    "material": "Tela Y Gamuza",
+    "stock": 1,
+    "sku": "rude-003",
+    "featured": false
   }
 ]
