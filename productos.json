@@ -42,10 +42,11 @@
     "price": 1200,
     "currency": "MXN",
     "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
-    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion1.png?raw=true",
+    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion.jpeg?raw=true",
     "images": [
     "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion1.png?raw=true",
-    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion1.png?raw=true"
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion2.jpeg?raw=true",
+    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/champion3.jpeg?raw=true"
     ],
     "category": "Chamarras",
     "sizes": ["M"],
