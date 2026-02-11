@@ -94,25 +94,6 @@
     "featured": false
   },{
     "id": 6,
-    "name": "Gorra TOTO Hats TONY AG MALA RACHA ALL BLK",
-    "price": 1250,
-    "currency": "MXN",
-    "description": "Camisa de lino natural, transpirable y ligera. Perfecta para climas cálidos.",
-    "image": "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/tony1.jpeg?raw=true",
-    "images": [
-    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/tony1.jpeg?raw=true",
-    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/tony2.jpeg?raw=true",
-    "https://github.com/alejandroTo/pagina-ventas/blob/main/Imagenes/tony3.jpeg?raw=true"
-    ],
-    "category": "Gorras",
-    "sizes": ["U"],
-    "colors": ["Natural"],
-    "material": "Tela Y Gamuza",
-    "stock": 1,
-    "sku": "tony-003",
-    "featured": false
-  },{
-    "id": 7,
     "name": "Gorra Anymore BAT GERVONTA BLACK",
     "price": 1150,
     "currency": "MXN",
